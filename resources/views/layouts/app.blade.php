@@ -18,7 +18,15 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-white">
-            @include('layouts.navigation')
+            @if(session()->has('message'))
+                <div class="bg-green-600 text-white p-4">
+                    <x-container>
+                        {{ session('message') }}
+                    </x-container>
+                </div>
+            @endif
+            
+          @include('layouts.navigation')
 
            @isset($header)
                 <!-- Page Heading -->
@@ -30,9 +38,10 @@
            @endisset
 
             <!-- Page Content -->
-            <main>
+            <main class="pt-8">
                 {{ $slot }}
             </main>
         </div>
     </body>
+    @include('layouts.footer')
 </html>
