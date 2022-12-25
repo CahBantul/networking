@@ -2,7 +2,7 @@
 <x-card>
   <div class="flex ml-6">
     <div class="flex-shrink-0 mr-3">
-      <img class="w-10 h-10 rounded-full" src="{{ Auth::user()->gravatar() }}" alt="{{ $status->user->name }}">
+      <img class="w-10 h-10 rounded-full" src="{{ $status->user->gravatar() }}" alt="{{ $status->user->name }}">
     </div>
     <div>
       <div class="font-semibold">
